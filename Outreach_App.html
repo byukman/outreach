@@ -15,9 +15,35 @@
 	<img src="C:\Users\Becki Yukman\Downloads\jtree.jpg"
 	 width="1000">
 
+
+
 	<script>
 		console.log("Hello from Javascript!");
 		document.body.innerHTML="Hijacked by Javacript"
+
+		//xhr object creation code from: https://www.html5rocks.com/en/tutorials/cors/
+		function createCORSRequest(method, url) { //doesn't support internet explorer
+ 			var xhr = new XMLHttpRequest();
+ 				xhr.open(method, url, true);
+ 				return xhr;
+ 			}
+ 		var xhr = createCORSRequest('GET', url);
+		if (!xhr) {
+  			throw new Error('CORS not supported');
+		}
+
+		xhr.onload = function() {
+ 			var responseText = xhr.responseText;
+			console.log(responseText);
+ 			// process the response.
+		};
+
+		xhr.onerror = function() {
+  		console.log('There was an error!');
+		};
+
+		xhr.withCredentials = true;
+		Access-Control-Allow-Credentials:true
 	</script>
 </body>
 </html>
