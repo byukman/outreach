@@ -67,9 +67,10 @@
 
 		  xhr.send();
 		}
-
+		
+		// ajax code from: https://learn.jquery.com/ajax/working-with-jsonp/
 		$.ajax({
-    		url: "https://jsonplaceholder.typicode.com/users",
+    		url: "http://query.yahooapis.com/v1/public/yql",
  
     		// The name of the callback parameter, as specified by the YQL service
     		jsonp: "callback",
@@ -79,7 +80,7 @@
  
     		// Tell YQL what we want and that we want JSON
     		data: {
-        		q: "select name where query=\"name\"",
+        		q: "select title,abstract,url from search.news where query=\"cat\"",
         		format: "json"
     		},
  
