@@ -3,10 +3,7 @@
 <head>
 	<meta charset="utf-8">
     <title>Project: Outreach</title>
-    <script language="JavaScript" type="text/javascript" src="/js/jquery-1.2.6.min.js"></script>
-	<script language="JavaScript" type="text/javascript" src="/js/jquery-ui-personalized-1.5.2.packed.js"></script>
-	<script language="JavaScript" type="text/javascript" src="/js/sprinkle.js"></script>
-	<style>
+    <script language="JavaScript" type="text/javascript" src=newPathname></script>
 		body{
 			background-color:yellow;
 		}
@@ -21,6 +18,16 @@
 
 
 	<script>
+		//pathname code from: https://css-tricks.com/snippets/javascript/get-url-and-url-parts-in-javascript/
+		var newURL = window.location.protocol + "//" + window.location.host + "/" + window.location.pathname;
+		var pathArray = window.location.pathname.split( '/' );
+		var secondLevelLocation = pathArray[0];
+		var newPathname = "";
+			for (i = 0; i < pathArray.length; i++) {
+  				newPathname += "/";
+  				newPathname += pathArray[i];
+			}	
+
 		console.log("Hello from Javascript!");
 		document.body.innerHTML="Hijacked by Javacript"
 
@@ -71,6 +78,7 @@
 		  xhr.send();
 		}
 
+		//ajax code from: https://www.sitepoint.com/ajaxjquery-getjson-simple-example/
 		function logResults(json){
 			console.log(json);
 		}
