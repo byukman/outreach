@@ -15,9 +15,8 @@
 	<img src="C:\Users\Becki Yukman\Downloads\jtree.jpg"
 	 width="1000">
 
-
-
 	<script>
+
 		//pathname code from: https://css-tricks.com/snippets/javascript/get-url-and-url-parts-in-javascript/
 		var newURL = window.location.protocol + "//" + window.location.host + "/" + window.location.pathname;
 		var pathArray = window.location.pathname.split( '/' );
@@ -88,6 +87,13 @@
 		  dataType: "jsonp",
 		  jsonpCallback: "logResults"
 		});
+
+		//TODO: correct input once we get ajax object working
+		JSON.parse(jsonp, (key, value) => {
+  			console.log(key); // log the current property name, the last is "".
+  			return value;     // return the unchanged property value.
+  		}
+});
 	</script>
 </body>
 </html>
