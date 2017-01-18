@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
     <title>Project: Outreach</title>
-    <script language="JavaScript" type="text/javascript" src=newPathname></script>
+    <link rel="stylesheet" href="style.css">
     <style>
     	/* TODO attempt to get left-right background gradient going */
     	#grad{
@@ -82,18 +82,7 @@
 	<h4> <a href="#top">Back to Top</a> </h4>
 	<script>
 
-		//pathname code from: https://css-tricks.com/snippets/javascript/get-url-and-url-parts-in-javascript/
-		var newURL = window.location.protocol + "//" + window.location.host + "/" + window.location.pathname;
-		var pathArray = window.location.pathname.split( '/' );
-		var secondLevelLocation = pathArray[0];
-		var newPathname = "";
-			for (i = 0; i < pathArray.length; i++) {
-  				newPathname += "/";
-  				newPathname += pathArray[i];
-			}	
-
 		console.log("Hello from Javascript!");
-		document.body.innerHTML="Hijacked by Javacript"
 
 		//xhr object creation code from: https://www.html5rocks.com/en/tutorials/cors/
 		function createCORSRequest(method, url) {
@@ -142,23 +131,7 @@
 		  xhr.send();
 		}
 
-		//ajax code from: https://www.sitepoint.com/ajaxjquery-getjson-simple-example/
-		function logResults(json){
-			console.log(json);
-		}
 
-		$.ajax({
-		  url: "https://api.github.com/users/jeresig",
-		  dataType: "jsonp",
-		  jsonpCallback: "logResults"
-		});
-
-		//TODO: correct input once we get ajax object working
-		JSON.parse(jsonp, (key, value) => {
-  			console.log(key); // log the current property name, the last is "".
-  			return value;     // return the unchanged property value.
-  		}
-});
 	</script>
 </body>
 </html>
