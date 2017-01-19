@@ -56,7 +56,20 @@
 	 width=100%></a>
 	<h1>Valued Users</h1>
 	
-	<div class="myUser"><h2> <a href= https://en.wikipedia.org/wiki/Album> Sample Name </a></h2>
+	<div class="myUser"><h2> <a id="name" href= https://en.wikipedia.org/wiki/Album> Sample Name </a></h2>
+	<p	id="user">
+	Sample Username <br>
+	Sample Email <br>
+	Sample Street Address <br>
+	Sample Suite <br>
+	Sample City <br>
+	Sample Zipcode <br>
+	Sample Geo <br>
+	Sample Lat <br>
+	Sample Lng <br> 
+	</p></div>
+
+	<div class="myUser"><h2> <a id="name" href= https://en.wikipedia.org/wiki/Album> Sample Name </a></h2>
 	<p	id="user">
 	Sample Username <br>
 	Sample Email <br>
@@ -131,6 +144,8 @@
 		  xhr.send();
 		}
 
+		var userEl = document.querySelectorAll("#user");
+		console.log(userEl);
 
 	</script>
 </body>
