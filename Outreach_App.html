@@ -46,25 +46,7 @@
 	 width=100%></a>
 	<h1>Valued Users</h1>
 
-	<div class="myUser"><h2> <a id="name0">Sample Name </a></h2>
-	<p	class="user">
-	<span id="username0">Sample Username </span><br>
-	<span id="email0">Sample Email </span><br>
-	<span id="street0">Sample Street Address </span>, 
-		<span id="suite0">Sample Suite </span><br>
-		<span id="city0">Sample City </span>, 
-		<span id="zip0">Sample Zipcode </span><br>
-			<span id="lat0">Sample Lat </span>, 
-			<span id="lng0">Sample Lng </span><br>
-	<span id="company0">Sample Company </span><br>
-		<span id="catch0">Sample Catchphrase </span><br>
-		<span id="bs0">Sample BS </span><br>
-	<span id="phone0">Sample Phone </span><br>
-	<span id="web0">Sample Website </span><br>
-
-	</p></div>
-
-		<div class="myUser"><h2> <a id="name1">Sample Name </a></h2>
+	<div class="myUser"><h2> <a id="name1">Sample Name </a></h2>
 	<p	class="user">
 	<span id="username1">Sample Username </span><br>
 	<span id="email1">Sample Email </span><br>
@@ -226,6 +208,24 @@
 
 	</p></div>
 
+	<div class="myUser"><h2> <a id="name10">Sample Name </a></h2>
+	<p	class="user">
+	<span id="username10">Sample Username </span><br>
+	<span id="email10">Sample Email </span><br>
+	<span id="street10">Sample Street Address </span>, 
+		<span id="suite10">Sample Suite </span><br>
+		<span id="city10">Sample City </span>, 
+		<span id="zip10">Sample Zipcode </span><br>
+			<span id="lat10">Sample Lat </span>, 
+			<span id="lng10">Sample Lng </span><br>
+	<span id="company10">Sample Company </span><br>
+		<span id="catch10">Sample Catchphrase </span><br>
+		<span id="bs10">Sample BS </span><br>
+	<span id="phone10">Sample Phone </span><br>
+	<span id="web10">Sample Website </span><br>
+
+	</p></div>
+
 	<h4> <a href="#top">Back to Top</a> </h4>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"> </script>
 		<script>	
@@ -234,40 +234,45 @@
 			//JSON jQuery
 			$.getJSON("https://jsonplaceholder.typicode.com/users", function (data) {
       			console.log(data);
-      			for(var i = 0; i<data.length; i++){
-	      			var newName = data[i].name;
+      			for(var i = 1; i<=data.length; i++){
+	      			var newName = data[i-1].name;
 	      			$("#name"+i).text(newName);
-	      			var newUsername = data[i].username;
+	      			var newUsername = data[i-1].username;
 	      			$("#username"+i).text(newUsername);
-	      			var newEmail = data[i].email;
+	      			var newEmail = data[i-1].email;
 	      			$("#email"+i).text(newEmail);
-	      			var newStreet = data[i].address.street;
+	      			var newStreet = data[i-1].address.street;
 	      			$("#street"+i).text(newStreet);
-	      			var newSuite = data[i].address.suite;
+	      			var newSuite = data[i-1].address.suite;
 	      			$("#suite"+i).text(newSuite);
-	      			var newCity = data[i].address.city;
+	      			var newCity = data[i-1].address.city;
 	      			$("#city"+i).text(newCity);
-	      			var newZip = data[i].address.zipcode;
+	      			var newZip = data[i-1].address.zipcode;
 	      			$("#zip"+i).text(newZip);
-	      			var newLat = data[i].address.geo.lat;
+	      			var newLat = data[i-1].address.geo.lat;
 	      			$("#lat"+i).text(newLat);
-	      			var newLng = data[i].address.geo.lng;
+	      			var newLng = data[i-1].address.geo.lng;
 	      			$("#lng"+i).text(newLng);
-	      			var newComp = data[i].company.name;
+	      			var newComp = data[i-1].company.name;
 	      			$("#company"+i).text(newComp);
-	      			var newCatch = data[i].company.catchPhrase;
+	      			var newCatch = data[i-1].company.catchPhrase;
 	      			$("#catch"+i).text(newCatch);
-	      			var newBs = data[i].company.bs;
+	      			var newBs = data[i-1].company.bs;
 	      			$("#bs"+i).text(newBs);
-	      			var newPhone = data[i].phone;
+	      			var newPhone = data[i-1].phone;
 	      			$("#phone"+i).text(newPhone);
-	      			var newWebsite = data[i].website;
+	      			var newWebsite = data[i-1].website;
 	      			$("#web"+i).text(newWebsite);
 	      		}
       		});
 
       		$.getJSON("https://jsonplaceholder.typicode.com/albums", function (data) {
       			console.log(data);
+      			for(var i = 1; i<11; i++){
+      				$("#name"+i).on("click", function() {
+      				var popup = window.open("");	
+      				});
+      			};
       		});
 		
 	</script>
