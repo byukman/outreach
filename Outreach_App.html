@@ -265,6 +265,10 @@
 	      			$("#web"+i).text(newWebsite);
 	      		}
       		});
+
+      		$.getJSON("https://jsonplaceholder.typicode.com/albums", function (data) {
+      			console.log(data);
+      		});
 		
 	</script>
 </body>
