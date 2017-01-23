@@ -72,12 +72,16 @@
 			console.log("Hello from Javascript!");
 		
 			//JSON jQuery
+			var myData = [];
+
 			$.getJSON("https://jsonplaceholder.typicode.com/users", function (data) {
       			console.log(data);
       		});
 			function success(data){
-				console.log(data);
+				myData.push(data);
 			};
+			console.log(myData);
+		
 	</script>
 </body>
 </html>
