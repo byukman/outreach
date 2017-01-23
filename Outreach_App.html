@@ -47,21 +47,19 @@
 
 	<div class="myUser"><h2> <a id="name" href= https://en.wikipedia.org/wiki/Album> Sample Name </a></h2>
 	<p	id="user">
-	<span id="username">Sample Username <br></span>
-	<span id="email">Sample Email <br></span>
-	<span id="address">Sample Street Address <br></span>
-		<span id="suite">Sample Suite <br></span>
-		<span id="city">Sample City <br></span>
-		<span id="zip">Sample Zipcode <br></span>
-		<span id="geo">Sample Geo <br></span>
-			<span id="lat">Sample Lat <br></span>
-			<span id="ling">Sample Lng <br></span>
-	<span id="company">Sample Company <br></span>
-		<span id="catch">Sample Catchphrase <br></span>
-		<span id="bs">Sample BS <br></span>
-		<span id="compName">Sample Company Name <br></span>
-	<span id="phone">Sample Phone <br></span>
-	<span id="web">Sample Website <br></span>
+	<span id="username">Sample Username </span><br>
+	<span id="email">Sample Email </span><br>
+	<span id="street">Sample Street Address </span>, 
+		<span id="suite">Sample Suite </span><br>
+		<span id="city">Sample City </span>, 
+		<span id="zip">Sample Zipcode </span><br>
+			<span id="lat">Sample Lat </span>, 
+			<span id="lng">Sample Lng </span><br>
+	<span id="company">Sample Company </span><br>
+		<span id="catch">Sample Catchphrase </span><br>
+		<span id="bs">Sample BS </span><br>
+	<span id="phone">Sample Phone </span><br>
+	<span id="web">Sample Website </span><br>
 
 
 	</p></div>
@@ -76,11 +74,39 @@
 
 			$.getJSON("https://jsonplaceholder.typicode.com/users", function (data) {
       			console.log(data);
+      			var newName = data[0].name;
+      			$("#name").text(newName);
+      			var newUsername = data[0].username;
+      			$("#username").text(newUsername);
+      			var newEmail = data[0].email;
+      			$("#email").text(newEmail);
+      			var newStreet = data[0].address.street;
+      			$("#street").text(newStreet);
+      			var newSuite = data[0].address.suite;
+      			$("#suite").text(newSuite);
+      			var newCity = data[0].address.city;
+      			$("#city").text(newCity);
+      			var newZip = data[0].address.zipcode;
+      			$("#zip").text(newZip);
+      			var newLat = data[0].address.geo.lat;
+      			$("#lat").text(newLat);
+      			var newLng = data[0].address.geo.lng;
+      			$("#lng").text(newLng);
+      			var newComp = data[0].company.name;
+      			$("#company").text(newComp);
+      			var newCatch = data[0].company.catchPhrase;
+      			$("#catch").text(newCatch);
+      			var newBs = data[0].company.bs;
+      			$("#bs").text(newBs);
+      			var newPhone = data[0].phone;
+      			$("#phone").text(newPhone);
+      			var newWebsite = data[0].website;
+      			$("#web").text(newWebsite);
       		});
 			function success(data){
 				myData.push(data);
 			};
-			console.log(myData);
+			
 		
 	</script>
 </body>
